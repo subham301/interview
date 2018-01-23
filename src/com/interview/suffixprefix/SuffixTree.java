@@ -144,11 +144,12 @@ public class SuffixTree {
                         //if lastCreatedInternalNode is not null means rule 2 extension happened before this. Point suffix link of that node
                         //to selected node using active point.
                         //TODO - Could be wrong here. Do we only do this if when walk down goes past a node or we do it every time.
+                        walkDown(i);
                         if(lastCreatedInternalNode != null){
                             lastCreatedInternalNode.suffixLink = selectNode();
                         }
                         //walk down and update active node if required as per rules of active node update for rule 3 extension.
-                        walkDown(i);
+                        
                         break;
                     }
                     else {
